@@ -1,0 +1,258 @@
+.background-svg {
+    background-image: url('/static/back.svg');
+    background-repeat: no-repeat;
+  }
+
+  .searchText {
+    text-align: center;
+    padding-top: 0%;
+    font: 1em sans-serif;
+    font-size: 24px;
+}
+
+.searchBoxText {
+    text-align: left;
+    padding-top: 0%;
+    font: 1em sans-serif;
+}
+
+.searchBox {
+    text-align: center;
+    padding-top: 0%;
+    font: 1em sans-serif;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 35px;
+    height: 200pxc;
+    width: 60%;
+}
+
+#searchButton {
+    background: url('/static/search-solid.svg') no-repeat center;
+    background-size: 50%;
+    border: none;
+    padding: 20px 20px 20px 20px;
+    cursor: pointer;
+}
+
+#clearButton {
+    border: none;
+    cursor: pointer;
+}
+
+#searchInput {
+    flex-grow: 1;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    background-color: transparent;
+}
+
+.masterSearch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-image {
+    width: 10px;
+    height: 10px;
+}
+
+.container {
+    white-space: nowrap; /* Prevents wrapping to the next line */
+}
+
+.recommendation-box {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: -4px; /* Adjust margin as needed */
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.recommendation-text {
+    display: inline-block;
+    margin-right: 10px; /* Adjust the right margin as needed */
+    margin-left: 10px;  /* Adjust the left margin as needed */
+}
+
+.strong-sellText {
+    color: #eb2837;
+    margin-right: 10px; /* Ensure there is space on the right */
+}
+
+.strong-buyText {
+    color: #01ff7d;
+    margin-left: 10px; /* Ensure there is space on the left */
+}
+
+.strong-sell {
+    background-color: #eb2837; /* Red */
+}
+
+.sell {
+    background-color: #af5f46; /* Orange */
+}
+
+.hold {
+    background-color: #73915a; /* Yellow */
+}
+
+.buy {
+    background-color: #37c869; /* Green */
+}
+
+.strong-buy {
+    background-color: #01ff7d; /* Blue */
+}
+
+
+
+
+#container {
+    height: 400px;
+    min-width: 310px;
+}
+
+.main-container {
+    padding: 20px;
+    margin-top: 200px; /* Adjust this value to increase or decrease the space */
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    background-color: #f4f4f4;
+    margin: 0; /* Make sure there's no margin */
+    justify-content: flex-start; /* Align items to the left */
+}
+
+.navbar li {
+    flex: none; /* Prevent li from taking equal space */
+    margin-right: 10px; /* Space between buttons, adjust as needed */
+}
+
+/* Optional: To ensure the navbar takes full width of its container */
+
+
+
+.navbar a.active {
+    background-color: #a9a9a9; /* Dark grey color */
+    color: white;
+}
+
+
+.navbar a {
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    color: #333;
+    text-align: center; /* Center the text */
+    background-color: #f4f4f4; /* Same as navbar background */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.navbar a.active, .navbar a:hover {
+    background-color: #a9a9a9; /* Dark grey color */
+    color: white;
+}
+
+.content {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.companyLogo {
+    width: 100px;
+    height: auto;
+}
+
+.small-image {
+    width: 20px;
+    height: auto;
+}
+
+.recommendation-box {
+    /* Add your styles */
+}
+
+.clear-icon {
+    width: 20px;  /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    padding-right: 10px;
+    padding-top: 3px;
+}
+
+#companyProfile p, #stockInfo p {
+    border-bottom: 1px solid #ccc; /* Thin line */
+    padding-bottom: 10px; /* Spacing below text */
+    margin-bottom: 10px; /* Spacing between lines */
+}
+
+/* Optional: Remove border from the last element */
+#companyProfile p:last-child, #stockInfo p:last-child {
+    border-bottom: none;
+}
+
+.companyNews-item {
+    background-color: #f0f0f0; /* Light grey background */
+    display: flex;
+    align-items: start;
+    padding: 15px;
+    margin-bottom: 20px; /* Space between news items */
+    border-radius: 5px; /* Optional rounded corners */
+}
+
+.companyNews-image {
+    width: 100px; /* Adjust as needed */
+    height: auto;
+    margin-right: 15px; /* Space between image and text */
+}
+
+.companyNews-content {
+    flex-grow: 1;
+    text-align: left;
+
+}
+
+.companyNews-title {
+    font-weight: bold;
+}
+
+.companyNews-date{
+    font-weight: lighter;
+}
+
+.companyNews-link {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+}
+
+.companyNews-link:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    background-color: #f0f0f0; /* Light grey background */
+    margin-top: 200px;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+    padding: 1px;
+    border-radius: 50px; /* Optional rounded corners */
+}

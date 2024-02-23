@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 2</title>
+    <link rel="stylesheet" href="/static/main.css"> <!-- Link to your external CSS file -->
+</head>
+<body class="background-svg">
+    
+    <h2 class="searchText">Stock Search</h2>
+    <form class="masterSearch" method="POST" action="/search">
+        <div class="search-bar searchBox">
+            <button id="searchButton" class="background-svg" type="submit"></button>
+            <input type="text" id="searchInput" class="searchBoxText" placeholder="Enter Stock Ticker Symbol" name="searchTerm" value="{{ search_term }}">
+            <button id="clearButton" class="background-svg" type="button" onclick="clearFunction()"><img src="static/times-solid.svg" alt="Clear" class="clear-icon"></button>
+                    </div>
+    </form>
+
+    {% if display_div %}
+    <div class="main-container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#companyProfile">Company Profile</a></li>
+                <li><a href="#stockInfo">Stock Information</a></li>
+                <li><a href="#recommendationTrends">Recommendation Trends</a></li>
+                <li><a href="#companyNews">Company News</a></li>
+            </ul>
+        </nav>
+
+        <div id="companyProfile" class="content">
+            <div>
+                <img src="{{ company_profile2.logo }}" alt="Company Logo" class="companyLogo">
+                <p><strong>Company Name </strong> {{ company_profile2.name }}</p>
+                <p><strong>Stock Ticker Symbol </strong> {{ company_profile2.ticker }}</p>
+                <p><strong>Stock Exchange Code </strong> {{ company_profile2.exchange }}</p>
+                <p><strong>Company Start Date</strong> {{ company_profile2.ipo }}</p>
+                <p><strong>Category</strong> {{ company_profile2.finnhubIndustry }}</p>
+            </div>
+        </div>
+
+        <div id="stockInfo" class="content">
+            <div>
+                <p><strong>Stock Ticker Symbol </strong> {{ company_profile2.ticker }}</p>
+                <p><strong>Trading Day </strong> {{ quote.time }}</p>
+                <p><strong>Previous Closing Price </strong> {{ quote.pc }}</p>
+                <p><strong>Opening Price </strong> {{ quote.o }}</p>
+                <p><strong>High Price </strong> {{ quote.h }}</p>
+                <p><strong>Low Price </strong> {{ quote.l }}</p>
+                <p><strong>Change </strong> {{ quote.d }} {% if quote.sD == "Up" %}<img src="static/GreenArrowUp.png" alt="Up" class="small-image">{% else %}<img src="static/RedArrowDown.png" alt="Down" class="small-image">{% endif %}</p>
+                <p><strong>Change Percent </strong> {{ quote.dp }} {% if quote.sDp == "Up" %}<img src="static/GreenArrowUp.png" alt="Up" class="small-image">{% else %}<img src="static/RedArrowDown.png" alt="Down" class="small-image">{% endif %}</p>
+            
+            
+                <div class="container">
+                    <div class="recommendation-text strong-sellText">Strong Sell</div>
+                    <div class="recommendation-box strong-sell">{{ recommendation_trends.strongSell }}</div>
+                    <div class="recommendation-box sell">{{ recommendation_trends.sell }}</div>
+                    <div class="recommendation-box hold">{{ recommendation_trends.hold }}</div>
+                    <div class="recommendation-box buy">{{ recommendation_trends.buy }}</div>
+                    <div class="recommendation-box strong-buy">{{ recommendation_trends.strongBuy }}</div>
+                    <div class="recommendation-text strong-buyText">Strong Buy</div>
+                    <br><br>
+                    <div>Recommendation Trends</div>
+                </div>        
+            </div>
+        </div>
+
+        <div id="recommendationTrends" class="content">
+            <div>
+                <script src="https://code.highcharts.com/stock/highstock.js"></script>
+                <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+                <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+                <script src="https://code.highcharts.com/stock/modules/accessibility.js"></script>
+            </div>
+            <div id="container"></div>
+        </div>
+
+        <div id="companyNews" class="content">
+            <div class="companyNews-item">
+                <img src="{{ company_news0.image }}" alt="News Image" class="companyNews-image">
+                <div class="companyNews-content">
+                    <p class="companyNews-title">{{ company_news0.headline }}</p>
+                    <p class="companyNews-date">{{ company_news0.datetime }}</p>
+                    <a href="{{ company_news0.url }}" target="_blank" class="companyNews-link">See Original Post</a>
+                </div>
+            </div>
+            <div class="companyNews-item">
+                <img src="{{ company_news1.image }}" alt="News Image" class="companyNews-image">
+                <div class="companyNews-content">
+                    <p class="companyNews-title">{{ company_news1.headline }}</p>
+                    <p class="companyNews-date">{{ company_news1.datetime }}</p>
+                    <a href="{{ company_news1.url }}" target="_blank" class="companyNews-link">See Original Post</a>
+                </div>
+            </div>
+            <div class="companyNews-item">
+                <img src="{{ company_news2.image }}" alt="News Image" class="companyNews-image">
+                <div class="companyNews-content">
+                    <p class="companyNews-title">{{ company_news2.headline }}</p>
+                    <p class="companyNews-date">{{ company_news2.datetime }}</p>
+                    <a href="{{ company_news2.url }}" target="_blank" class="companyNews-link">See Original Post</a>
+                </div>
+            </div>
+            <div class="companyNews-item">
+                <img src="{{ company_news3.image }}" alt="News Image" class="companyNews-image">
+                <div class="companyNews-content">
+                    <p class="companyNews-title">{{ company_news3.headline }}</p>
+                    <p class="companyNews-date">{{ company_news3.datetime }}</p>
+                    <a href="{{ company_news3.url }}" target="_blank" class="companyNews-link">See Original Post</a>
+                </div>
+            </div>
+            <div class="companyNews-item">
+                <img src="{{ company_news4.image }}" alt="News Image" class="companyNews-image">
+                <div class="companyNews-content">
+                    <p class="companyNews-title">{{ company_news4.headline }}</p>
+                    <p class="companyNews-date">{{ company_news4.datetime }}</p>
+                    <a href="{{ company_news4.url }}" target="_blank" class="companyNews-link">See Original Post</a>
+                </div>
+            </div>
+    </div>
+    {% elif display_div == 0 %}
+        <div class="error-message">
+            <p>Error: No record has been found, please enter a valid symbol</p>
+        </div>
+    {% endif %}
+
+    <script src="/static/main.js"></script>
+
+
+</body>
+</html>
